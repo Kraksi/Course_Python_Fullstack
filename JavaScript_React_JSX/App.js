@@ -14,10 +14,12 @@ class App extends React.Component {
         title={book.title}
         author={book.author}
         price={book.price}
-/>
-);
+/>);
         return(
             <div className="app">
+
+                <Button value="Кнопка" counter={1} />
+
                 <Welcome name="Alex"/>
                 {books} 
             </div>
