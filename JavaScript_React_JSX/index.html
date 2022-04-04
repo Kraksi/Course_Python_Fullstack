@@ -13,39 +13,32 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <script src="data.js"></script>
+    <script type="text/babel" src="Book.js"></script>
 
     <script type="text/babel">
 
         const names = ["John", "Barsick"]
             .map((name,index) => <li key={index}>{name}</li>);
-
-        const h1Style = {
-            color: "#369",
-            fontFamily: "sans-serif",
-        }
-
         console.log(dataBook);
         dataBook.push({
             id:6, title:"Book3",author:"Autho3", price: null
-
         });
-
-        const formatPrice = price => price? <b>{price}</b>: <del></del>;
-
-        const books = dataBook.map(book => <div className="book">
-        <h3 style={h1Style}>{book.title}</h3>
-        <p>Author: {book.author}</p>
-        <p>Price: {formatPrice(book.price)}</p>
-        </div>);
-
-//        function Welcome(props){
-//            return <h1>Hello, {props.name}</h1>
-//        }
-        class Welcome extends React.Component{
-            render(){
-                return <h1> Hello, {this.props.name}</h1>
-            }
+//        const books = dataBook.map((book,index) => <Book key={index} {...book} />);
+        const books = dataBook.map( (book,index) => <Book
+            key={index}
+            title={book.title}
+            author={book.author}
+            price={book.price}
+            />
+        );
+        function Welcome(props){
+            return <h1>Hello, {props.name}</h1>
         }
+//        class Welcome extends React.Component{
+//            render(){
+//                return <h1> Hello, {this.props.name}</h1>
+//            }
+//        }
 
         const app = <div className="app">
             <Welcome name="Alex"/>
