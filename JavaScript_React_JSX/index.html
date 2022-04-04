@@ -11,6 +11,7 @@
     <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js" ></script>
     <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" ></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="data.js"></script>
     <script type="text/babel">
         const names = ["John", "Barsick"]
             .map((name,index) => <li key={index}>{name}</li>);
@@ -19,13 +20,16 @@
             color: "#369",
             fontFamily: "sans-serif",
         }
+        console.log(dataBook);
+        const book = <h3 style={h1Style}>{dataBook[0].title}</h3>
         const app = <div className="app">
-            <h1 style={h1Style}>Hello world!</h1>
+            {book} 
             <ul>
-            {names}
+                {names}
             </ul>
             <p>{new Date().toLocaleTimeString()}</p>
             </div>
+        
         ReactDOM.render(app, document.querySelector('#app'));
     </script>
 
