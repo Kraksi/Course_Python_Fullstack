@@ -13,43 +13,15 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <script src="data.js"></script>
+
     <script type="text/babel" src="Book.js"></script>
+    <script type="text/babel" src="App.js"></script>
 
     <script type="text/babel">
-
-        const names = ["John", "Barsick"]
-            .map((name,index) => <li key={index}>{name}</li>);
-        console.log(dataBook);
-        dataBook.push({
-            id:6, title:"Book3",author:"Autho3", price: null
-        });
-//        const books = dataBook.map((book,index) => <Book key={index} {...book} />);
-        const books = dataBook.map( (book,index) => <Book
-            key={index}
-            title={book.title}
-            author={book.author}
-            price={book.price}
-            />
-        );
         function Welcome(props){
             return <h1>Hello, {props.name}</h1>
-        }
-//        class Welcome extends React.Component{
-//            render(){
-//                return <h1> Hello, {this.props.name}</h1>
-//            }
-//        }
-
-        const app = <div className="app">
-            <Welcome name="Alex"/>
-            {books} 
-            <ul>
-                {names}
-            </ul>
-            <p>{new Date().toLocaleTimeString()}</p>
-            </div>
-        
-        ReactDOM.render(app, document.querySelector('#app'));
+        }     
+        ReactDOM.render(<App dataBook={dataBook}/>, document.querySelector('#app'));
     </script>
 
     
