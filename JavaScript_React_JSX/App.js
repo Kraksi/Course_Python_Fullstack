@@ -30,7 +30,13 @@ class App extends React.Component {
             <div className="app">
 
                 <SearchInput />
-                
+
+                <hr/>
+
+                <AddBookForm />
+
+                <hr/>
+
                 <Button value="Кнопка" counter={1} />
 
                 <Welcome name="Alex"/>

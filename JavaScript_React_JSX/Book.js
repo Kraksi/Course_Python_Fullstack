@@ -34,8 +34,8 @@ class Book extends React.Component {
             <h3 style={h1Style}>{title}</h3>
             <p>Author: {author}</p>
             <p>Price: {formatPrice(price)}</p>
-            <a href="#" className = "btn btn-success" onClick={()=>{this.setState({selected: !this.stateselected})}}>Сравнить</a> &nbsp;
-            <a href="#" className = "btn btn-success">В корзину</a>
+            <a href="#" className = "btn btn-primary" onClick={()=>{this.setState({selected: !this.stateselected})}}>Сравнить</a> &nbsp;
+            <a href="#" className = "btn btn-primary">В корзину</a>
         </div>
         )
     }
