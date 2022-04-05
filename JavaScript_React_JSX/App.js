@@ -29,6 +29,8 @@ class App extends React.Component {
         return(
             <div className="app">
 
+                <SearchInput />
+                
                 <Button value="Кнопка" counter={1} />
 
                 <Welcome name="Alex"/>
