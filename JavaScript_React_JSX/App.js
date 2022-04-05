@@ -33,6 +33,10 @@ class App extends React.Component {
 
                 <hr/>
 
+                <BasketItemCounter counter={5} />
+
+                <hr/>
+
                 <AddBookForm />
 
                 <hr/>
