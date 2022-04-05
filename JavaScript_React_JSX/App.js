@@ -11,16 +11,14 @@ class App extends React.Component {
     render() {
         const books = dataBook.map( (book,index) => {
             if( "price" in book ){
-                return
-                <Book
+                return <Book 
                 key={index}
                 title={book.title}
                 author={book.author}
                 price={book.price}
             />
             } else {
-                return
-                <BookWithoutPrice
+                return <BookWithoutPrice
                 key={index}
                 title={book.title}
                 author={book.author}
