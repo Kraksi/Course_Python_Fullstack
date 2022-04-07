@@ -6,16 +6,16 @@ class Button extends React.Component {
             color: 'grey'
         }
         this.handleClick = this.handleClick.bind(this);
-        this.handleMouseMove = this.handleMouseMove.bind(this);
+//        this.handleMouseMove = this.handleMouseMove.bind(this);
     }
 
     handleClick(e){
         this.setState({counter: this.state.counter+1});
     }
 
-    handleMouseMove(e){
-        console.log(e.clientX, e.clientY, e);
-    }
+//    handleMouseMove(e){
+//       console.log(e.clientX, e.clientY, e);
+//    }
 
     render(){
         setTimeout(()=>{
@@ -24,8 +24,7 @@ class Button extends React.Component {
         }, 1000);
         return <button 
         style ={{background: this.state.color}}
-        onClick={this.handleClick}
-        onMouseMove = {this.handleMouseMove}>
+        onClick={this.handleClick}>
             {this.props.value}
             {this.state.counter}
         </button>

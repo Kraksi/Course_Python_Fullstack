@@ -20,6 +20,23 @@ class Book extends React.Component {
         this.state ={
             selected: true
         }
+        this.handleClick = this.handleClick.bind(this);
+        this.addBasketBook = this.addBasketBook.bind(this);
+    }
+    componentDidMount(){
+        console.log('--','компонент смонтирован')
+    }
+    componentWillUnMount(){
+        console.log('--','компонент будет демонтирован')
+    }
+    handleClick(e){
+        e.preventDefault();
+        this.setState({selected: !this.state.selected})
+    }
+    addBasketBook(e){
+        e.preventDefault();
+        this.props.handleAddBasket(this.props.id)
+
     }
     render (){
     const h1Style = {
@@ -34,8 +51,8 @@ class Book extends React.Component {
             <h3 style={h1Style}>{title}</h3>
             <p>Author: {author}</p>
             <p>Price: {formatPrice(price)}</p>
-            <a href="#" className = "btn btn-primary" onClick={()=>{this.setState({selected: !this.stateselected})}}>Сравнить</a> &nbsp;
-            <a href="#" className = "btn btn-primary">В корзину</a>
+            <a href="#" className = "btn btn-primary" onClick={this.handleClick}>Сравнить</a> &nbsp;
+            <a href="#" className = "btn btn-primary" onClick={this.addBasketBook}>В корзину</a>
         </div>
         )
     }
