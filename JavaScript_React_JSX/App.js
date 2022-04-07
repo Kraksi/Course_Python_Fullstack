@@ -8,18 +8,39 @@
 //}
 
 class App extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            item: {}
+        }
+        this.addBasket = this.addBasket.bind(this);
+    }
+
+    addBasket(id){
+        let newState = Object.assign({}, this.state.items);
+        if ( id in newState ){
+            newState[id]++;
+        } else {
+            newState[id] = 1;
+        }
+        console.log({items: newState})
+        this.setState({items: newState});
+    }
+
     render() {
         const books = dataBook.map( (book,index) => {
             if( "price" in book ){
                 return <Book 
-                key={index}
+                key={book.id}
+                id={book.id}
                 title={book.title}
                 author={book.author}
                 price={book.price}
+                handleAddBasket={this.addBasket}
             />
             } else {
                 return <BookWithoutPrice
-                key={index}
+                key={book.id}
                 title={book.title}
                 author={book.author}
             />
