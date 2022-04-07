@@ -11,9 +11,11 @@ class App extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            item: {}
+            item: {},
+            dataBook: this.props.dataBook
         }
         this.addBasket = this.addBasket.bind(this);
+        this.removeBasket = this.removeBasket.bind(this);
     }
 
     addBasket(id){
@@ -25,6 +27,17 @@ class App extends React.Component {
         }
         console.log({items: newState})
         this.setState({items: newState});
+    }
+    removeBasket(id){
+        let currentState = Object.assign({}, this.state.items);
+        let newItems ={};
+        for(let i in currentState){
+            if(id != i){
+                newItems[id] = currentState[i];            }
+        }
+
+
+        this.setState({items: newItems});
     }
 
     render() {
@@ -49,6 +62,10 @@ class App extends React.Component {
         
         return(
             <div className="app">
+                <Basket items={this.state.items}
+                dataBook={this.state.dataBook}
+                handleRemoveBasket={this.removeBasket}
+                />
 
                 <SearchInput />
 
