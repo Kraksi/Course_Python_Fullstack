@@ -12,9 +12,9 @@ export const items = function(state ={},action){
         case ADD_BOOK_TO_BASKET:
             newState = Object.assign(state);
             if (!(action.id in newState)){
-                newState[id] = 0;
+                newState[action.id] = 0;
             }
-            newState[id]++;
+            newState[action.id]++;
           return newState
         case REMOVE_BOOK_FROM_BASKET:
             newState = {};
