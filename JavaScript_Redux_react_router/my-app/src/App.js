@@ -24,8 +24,6 @@ class App extends React.Component{
   }
   addBook(book){
   }
-  }
- 
   render(){
     const book = this.state.dataBook. map( item => (                         
     item["price"] ?   <Book
