@@ -14,40 +14,16 @@ class App extends React.Component{
  
   constructor(props){
     super(props);
-    this.state = {
-      dataBook: this.props.dataBook,
-      items: {}
-    };
     this.addBook = this.addBook.bind(this); 
     this.addBasket = this.addBasket.bind(this); 
     this.removeBasket = this.removeBasket.bind(this); 
   }
-  
-   removeBasket(id){
-     let items = Object.assign({},this.state.items);
-     delete items[id]; 
-     console.log(items);
-     this.setState({ items: items});
-   }  
-   addBasket(id){
-     let items = Object.assign({},this.state.items);
-     items[id] = (id in items) ? items[id]+1 : 1;
-     console.log(items);
-     this.setState({ items: items});
-   }
- 
+  removeBasket(id){
+  }  
+  addBasket(id){
+  }
   addBook(book){
-   //alert(JSON.stringify(book))
-   
-   this.setState( prev =>{
-    return {dataBook:prev.dataBook.concat(book)}
-   });
-   
-//    let toAdd = Object.assign({},book);
-//    this.setState({
-//      dataBook: [...this.state.dataBook, toAdd]
-//    }); 
-
+  }
   }
  
   render(){

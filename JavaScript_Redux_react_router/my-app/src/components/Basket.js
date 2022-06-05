@@ -7,10 +7,6 @@ class Basket extends React.Component {
  
  removeItem(ev){
   ev.preventDefault();
-  let handleRemoveBasket = this.props.handleRemoveBasket;
-  let id = this.props.id;
-  //alert(ev.target.id)
-  handleRemoveBasket(ev.target.id);
  }
 render (){ 
  let items = [];
