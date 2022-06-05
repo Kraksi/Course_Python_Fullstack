@@ -12,24 +12,22 @@ import {
 import Catalog from './routes/catalog';
 import Basket from './routes/basket';
 import About from './routes/about';
+import Book from './routes/book';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
     <Routes>
-    <Route path="/" element={<App />}>
-    <Route path="catalog" element={<Catalog />}/>
-    <Route path="basket" element={<Basket />}/>
-    <Route path="about" element={<About />}/>
-    </Route>
+      <Route path="/" element={<App />}>
+        <Route path="catalog" element={<Catalog />}>
+          <Route path=":idbook" element={<Book />}/>
+        </Route>
+        <Route path="basket" element={<Basket />}/>
+        <Route path="about" element={<About />}/>
+      </Route>
     </Routes>
     </BrowserRouter>
   </React.StrictMode>
-  
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
