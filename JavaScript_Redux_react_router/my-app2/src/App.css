@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+.my-exit-done::after{
+  content: 'Ura!'
+}
+.my-enter-done{
+  background: #1eff00;
+  transition: all .5s .5s ease-in;
+}
+.my-exit-done{
+  background: #e912cc;
+  transition: all .5s .5s ease-in;
+}
+.my-enter-active{
+  background: #336699;
+  transition: all .5s .5s ease-in;
+}
+.my-exit-active{
+  background: #d9ff00;
+  transition: all .5s .5s ease-in;
+}
